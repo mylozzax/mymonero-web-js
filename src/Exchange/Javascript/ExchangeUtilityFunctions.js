@@ -18,7 +18,7 @@ function sendFunds (wallet, xmr_amount, xmr_send_address, sweep_wallet, validati
     let cached_OAResolved_address
     let contact_hasOpenAliasAddress
     let contact_address
-    const raw_amount_string = xmr_amount // XMR amount in double
+    const raw_amount_string = xmr_amount // LOZZ amount in double
     const sweeping = sweep_wallet
     const simple_priority = 1
 

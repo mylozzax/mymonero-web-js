@@ -56,7 +56,7 @@ class SettingsView extends View {
     const div = document.createElement('div')
     div.style.padding = '12px 0 12px 33px'
     const buttonView = commonComponents_tables.New_clickableLinkButtonView(
-      'ABOUT MYMONERO',
+      'ABOUT MYLOZZAX',
       self.context,
       function () {
         const options = {}

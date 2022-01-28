@@ -10,17 +10,17 @@ const WalletsSelectView = require('../../WalletsList/Views/WalletsSelectView.web
 const commonComponents_activityIndicators = require('../../MMAppUICommonComponents/activityIndicators.web')
 const commonComponents_actionButtons = require('../../MMAppUICommonComponents/actionButtons.web')
 const JustSentTransactionDetailsView = require('./JustSentTransactionDetailsView.web')
-const monero_sendingFunds_utils = require('@mymonero/mymonero-sendfunds-utils')
+const monero_sendingFunds_utils = require('@mylozzax/mylozzax-sendfunds-utils')
 const monero_openalias_utils = require('../../OpenAlias/monero_openalias_utils')
-const monero_config = require('@mymonero/mymonero-monero-config')
-const monero_amount_format_utils = require('@mymonero/mymonero-money-format')
+const monero_config = require('@mylozzax/mylozzax-monero-config')
+const monero_amount_format_utils = require('@mylozzax/mylozzax-money-format')
 const jsQR = require('jsqr')
-const monero_requestURI_utils = require('@mymonero/mymonero-request-utils')
+const monero_requestURI_utils = require('@mylozzax/mylozzax-request-utils')
 const Currencies = require('../../CcyConversionRates/Currencies')
-const JSBigInt = require('@mymonero/mymonero-bigint').BigInteger // important: grab defined export
+const JSBigInt = require('@mylozzax/mylozzax-bigint').BigInteger // important: grab defined export
 const rateServiceDomainText = 'cryptocompare.com'
 const commonComponents_contactPicker_Lite = require('../../MMAppUICommonComponents/contactPicker.Lite.web')
-const YatMoneroLookup = require('@mymonero/mymonero-yat-lookup');
+const YatMoneroLookup = require('@mylozzax/mylozzax-yat-lookup');
 let yatMoneroLookup = new YatMoneroLookup({});
 
 class SendFundsView extends View {
@@ -837,7 +837,7 @@ class SendFundsView extends View {
   // Runtime - Accessors - Navigation
   //
   Navigation_Title () {
-    return 'Send Monero'
+    return 'Send Lozzax'
   }
 
   Navigation_New_RightBarButtonView () {
@@ -1308,7 +1308,7 @@ class SendFundsView extends View {
     const wallet = self.walletSelectView.CurrentlySelectedRowItem
     {
       if (typeof wallet === 'undefined' || !wallet) {
-        _trampolineToReturnWithValidationErrorString('Please create a wallet to send Monero.')
+        _trampolineToReturnWithValidationErrorString('Please create a wallet to send Lozzax.')
         return
       }
     }
@@ -1910,16 +1910,16 @@ class SendFundsView extends View {
         //
         const code = jsQR(imageData.data, imageData.width, imageData.height)
         if (!code || !code.location) {
-          self.validationMessageLayer.SetValidationError('MyMonero was unable to find a QR code in that image.')
+          self.validationMessageLayer.SetValidationError('MyLozzax was unable to find a QR code in that image.')
           return
         }
         const stringData = code.data
         if (!stringData) {
-          self.validationMessageLayer.SetValidationError('MyMonero was unable to decode a QR code from that image.')
+          self.validationMessageLayer.SetValidationError('MyLozzax was unable to decode a QR code from that image.')
           return
         }
         if (typeof stringData !== 'string') {
-          self.validationMessageLayer.SetValidationError('MyMonero was able to decode QR code but got unrecognized result.')
+          self.validationMessageLayer.SetValidationError('MyLozzax was able to decode QR code but got unrecognized result.')
           return
         }
         const possibleURIString = stringData

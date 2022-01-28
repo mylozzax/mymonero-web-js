@@ -6,11 +6,11 @@ const ValidationLibrary = require('wallet-address-validator')
 const View = require('../../Views/View.web')
 const commonComponents_navigationBarButtons = require('../../MMAppUICommonComponents/navigationBarButtons.web')
 const commonComponents_activityIndicators = require('../../MMAppUICommonComponents/activityIndicators.web')
-const JSBigInt = require('@mymonero/mymonero-bigint').BigInteger // important: grab defined export
-const monero_amount_format_utils = require('@mymonero/mymonero-money-format')
-const ExchangeHelper = require("@mymonero/mymonero-exchange-helper")
-const webComponents = require("@mymonero/mymonero-web-components");
-const pageTemplates = require("@mymonero/mymonero-page-templates");
+const JSBigInt = require('@mylozzax/mylozzax-bigint').BigInteger // important: grab defined export
+const monero_amount_format_utils = require('@mylozzax/mylozzax-money-format')
+const ExchangeHelper = require("@mylozzax/mylozzax-exchange-helper")
+const webComponents = require("@mylozzax/mylozzax-web-components");
+const pageTemplates = require("@mylozzax/mylozzax-page-templates");
 const ExchangeLandingPage = pageTemplates.ExchangeLandingPage;
 let exchangeHelper = new ExchangeHelper();
 //let handleOfferError = exchangeHelper.ErrorHelper.handleOfferError;
@@ -29,7 +29,7 @@ function newEstimatedNetworkFeeString(fee_JSBigInt) {
   //const finalizable_ccySymbol = displayCcySymbol
   const finalizable_formattedAmountString = estimatedTotalFee_str// `${estimatedTotalFee_moneroAmountDouble}`
   const final_formattedAmountString = finalizable_formattedAmountString
-  const final_ccySymbol = 'XMR'
+  const final_ccySymbol = 'LOZZ'
   const displayString = `${final_formattedAmountString}`
   //
   return displayString

@@ -4,8 +4,8 @@ const View = require('../../Views/View.web')
 const commonComponents_tables = require('../../MMAppUICommonComponents/tables.web')
 const commonComponents_forms = require('../../MMAppUICommonComponents/forms.web')
 const commonComponents_navigationBarButtons = require('../../MMAppUICommonComponents/navigationBarButtons.web')
-const monero_amount_format_utils = require('@mymonero/mymonero-money-format')
-const JSBigInt = require('@mymonero/mymonero-bigint').BigInteger
+const monero_amount_format_utils = require('@mylozzax/mylozzax-money-format')
+const JSBigInt = require('@mylozzax/mylozzax-bigint').BigInteger
 
 class TransactionDetailsView extends View {
   constructor (options, context) {

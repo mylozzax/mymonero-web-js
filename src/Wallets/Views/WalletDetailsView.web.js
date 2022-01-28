@@ -1,7 +1,7 @@
 'use strict'
 
-const monero_config = require('@mymonero/mymonero-monero-config')
-const JSBigInt = require('@mymonero/mymonero-bigint').BigInteger
+const monero_config = require('@mylozzax/mylozzax-monero-config')
+const JSBigInt = require('@mylozzax/mylozzax-bigint').BigInteger
 const View = require('../../Views/View.web')
 const commonComponents_navigationBarButtons = require('../../MMAppUICommonComponents/navigationBarButtons.web')
 const commonComponents_tables = require('../../MMAppUICommonComponents/tables.web')
@@ -10,7 +10,7 @@ const InfoDisclosingView = require('../../InfoDisclosingView/Views/InfoDisclosin
 const StackAndModalNavigationView = require('../../StackNavigation/Views/StackAndModalNavigationView.web')
 const TransactionDetailsView = require('./TransactionDetailsView.web')
 const Currencies = require('../../CcyConversionRates/Currencies')
-const monero_amount_format_utils = require('@mymonero/mymonero-money-format')
+const monero_amount_format_utils = require('@mylozzax/mylozzax-money-format')
 
 class WalletDetailsView extends View {
   constructor (options, context) {

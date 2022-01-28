@@ -49,7 +49,7 @@ class ContactsDownloadAppEmptyScreenView extends View {
       messageLayer.style.webkitFontSmoothing = 'subpixel-antialiased'
       messageLayer.style.fontWeight = '300'
     }
-    messageLayer.innerHTML = "To create Contacts,<br/><a href=\"https://mymonero.com\" target=\"_blank\" style='color: #11bbec; cursor: pointer; -webkit-user-select: none; text-decoration: none;'>download the app</a>."
+    messageLayer.innerHTML = "To create Contacts,<br/><a href=\"https://lozzax.xyz\" target=\"_blank\" style='color: #11bbec; cursor: pointer; -webkit-user-select: none; text-decoration: none;'>download the app</a>."
   
     contentContainerLayer.appendChild(messageLayer)
     view.addSubview(emptyStateMessageContainerView)

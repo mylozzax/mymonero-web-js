@@ -5,12 +5,13 @@
 // Redistribution and use in source and binary forms, with or without modification, are
 'use strict'
 
-const monero_config = require('@mymonero/mymonero-monero-config')
-const monero_amount_format_utils = require('@mymonero/mymonero-money-format')
-const JSBigInt = require('@mymonero/mymonero-bigint').BigInteger
+const monero_config = require('@mylozzax/mylozzax-monero-config')
+const monero_amount_format_utils = require('@mylozzax/mylozzax-money-format')
+const JSBigInt = require('@mylozzax/mylozzax-bigint').BigInteger
 
 const ccySymbolsByCcy = exports.ccySymbolsByCcy =
 {
+  LOZZ: 'LOZZ',
   XMR: 'XMR', // included for completeness / convenience / API
   USD: 'USD',
   AUD: 'AUD',
@@ -35,6 +36,7 @@ const ccySymbolsByCcy = exports.ccySymbolsByCcy =
 }
 const allOrderedCurrencySymbols = exports.allOrderedCurrencySymbols =
 [
+  ccySymbolsByCcy.LOZZ, // included for completeness / convenience / API
   ccySymbolsByCcy.XMR, // included for completeness / convenience / API
   ccySymbolsByCcy.USD,
   ccySymbolsByCcy.AUD,
@@ -58,10 +60,10 @@ const allOrderedCurrencySymbols = exports.allOrderedCurrencySymbols =
   ccySymbolsByCcy.ZAR
 ]
 const hasAtomicUnits = exports.hasAtomicUnits = function (ccySymbol) {
-  return (ccySymbol === ccySymbolsByCcy.XMR)
+  return (ccySymbol === ccySymbolsByCcy.LOZZ)
 }
 const unitsForDisplay = exports.unitsForDisplay = function (ccySymbol) {
-  if (ccySymbol === ccySymbolsByCcy.XMR) {
+  if (ccySymbol === ccySymbolsByCcy.LOZZ) {
     return monero_config.coinUnitPlaces
   }
   return 2
@@ -71,8 +73,8 @@ const nonAtomicCurrency_formattedString = exports.nonAtomicCurrency_formattedStr
   ccySymbol
 ) { // -> String
   // is nonAtomic-unit'd currency a good enough way to categorize these?
-  if (ccySymbol == ccySymbolsByCcy.XMR) {
-    throw 'nonAtomicCurrency_formattedString not to be called with ccySymbol=.XMR'
+  if (ccySymbol == ccySymbolsByCcy.LOZZ) {
+    throw 'nonAtomicCurrency_formattedString not to be called with ccySymbol=.LOZZ'
   }
   if (final_amountDouble == 0) {
     return '0' // not 0.0
@@ -121,7 +123,7 @@ exports.submittableMoneroAmountDouble_orNull = function (
     return null
   }
   const submittableAmountRawNumber = submittableAmountRawNumber_orNull
-  if (selectedCurrencySymbol == ccySymbolsByCcy.XMR) {
+  if (selectedCurrencySymbol == ccySymbolsByCcy.LOZZ) {
     return submittableAmountRawNumber // identity rate - NOTE: this is also the RAW non-truncated amount
   }
   const xmrAmountDouble = rounded_ccyConversionRateCalculated_moneroAmountNumber(
@@ -164,7 +166,7 @@ const displayUnitsRounded_amountInCurrency = exports.displayUnitsRounded_amountI
   if (typeof moneroAmountNumber !== 'number') {
     throw 'unexpected typeof moneroAmountNumber=' + (typeof moneroAmountNumber)
   }
-  if (ccySymbol == ccySymbolsByCcy.XMR) {
+  if (ccySymbol == ccySymbolsByCcy.LOZZ) {
     return moneroAmountNumber // no conversion necessary
   }
   const xmrToCurrencyRate = CcyConversionRates_Controller_shared.rateFromXMR_orNullIfNotReady(
@@ -185,9 +187,9 @@ exports.displayStringComponentsFrom = function (
   xmr_amount_JSBigInt,
   displayCcySymbol
 ) {
-  const XMR = ccySymbolsByCcy.XMR
+  const XMR = ccySymbolsByCcy.LOZZ
   const xmr_amount_str = monero_amount_format_utils.formatMoney(xmr_amount_JSBigInt)
-  if (displayCcySymbol != XMR) {
+  if (displayCcySymbol != LOZZ) {
     // TODO: using doubles here is not very good, and must be replaced with JSBigInts to support small amounts
     const xmr_amount_double = parseFloat(xmr_amount_str)
     //
@@ -212,6 +214,6 @@ exports.displayStringComponentsFrom = function (
   }
   return {
     amt_str: xmr_amount_str,
-    ccy_str: XMR
+    ccy_str: LOZZ
   } // special case
 }

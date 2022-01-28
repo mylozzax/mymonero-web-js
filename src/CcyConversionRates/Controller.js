@@ -42,7 +42,7 @@ class Controller extends EventEmitter {
   {
     const self = this
     //
-    if (ccySymbol == Currencies.ccySymbolsByCcy.XMR) {
+    if (ccySymbol == Currencies.ccySymbolsByCcy.LOZZ) {
       throw "Invalid 'currency' argument value"
     }
     const rateValue_orNil = self.xmrToCcyRateJSNumbersByCcySymbols[ccySymbol]
@@ -55,7 +55,7 @@ class Controller extends EventEmitter {
   {
     const self = this
     //
-    if (ccySymbol == Currencies.ccySymbolsByCcy.XMR) {
+    if (ccySymbol == Currencies.ccySymbolsByCcy.LOZZ) {
       throw "Invalid 'currency' argument value"
     }
     const rateValue_orNil = self.xmrToCcyRateJSNumbersByCcySymbols[ccySymbol] // which may be nil if the rate is not ready yet

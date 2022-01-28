@@ -5,12 +5,12 @@ const EventEmitter = require('events')
 const extend = require('util')._extend
 const uuidV1 = require('uuid/v1')
 //
-const monero_txParsing_utils = require('@mymonero/mymonero-tx-parsing-utils')
-const monero_sendingFunds_utils = require('@mymonero/mymonero-sendfunds-utils')
-const JSBigInt = require('@mymonero/mymonero-bigint').BigInteger
-const monero_amount_format_utils = require('@mymonero/mymonero-money-format')
-const monero_config = require('@mymonero/mymonero-monero-config')
-const mnemonic_languages = require('@mymonero/mymonero-locales')
+const monero_txParsing_utils = require('@mylozzax/mylozzax-tx-parsing-utils')
+const monero_sendingFunds_utils = require('@mylozzax/mylozzax-sendfunds-utils')
+const JSBigInt = require('@mylozzax/mylozzax-bigint').BigInteger
+const monero_amount_format_utils = require('@mylozzax/mylozzax-money-format')
+const monero_config = require('@mylozzax/mylozzax-monero-config')
+const mnemonic_languages = require('@mylozzax/mylozzax-locales')
 //
 const persistable_object_utils = require('../../DocumentPersister/persistable_object_utils')
 const wallet_persistence_utils = require('./wallet_persistence_utils')
@@ -18,11 +18,11 @@ const WalletHostPollingController = require('../Controllers/WalletHostPollingCon
 //
 const wallet_currencies =
 {
-  xmr: 'xmr'
+  xmr: 'lozz'
 }
 const humanReadable__wallet_currencies =
 {
-  xmr: 'XMR'
+  xmr: 'LOZZ'
 }
 //
 // Shared utility functions (these can be factored out)
@@ -147,7 +147,7 @@ class Wallet extends EventEmitter {
           throw 'self.mnemonic_wordsetName not found'
         }
         self.generatedOnInit_walletDescription =
-				{ // this structure here is an artifact of a previous organization of the mymonero-core-js code. it should/can be phased out
+				{ // this structure here is an artifact of a previous organization of the mylozzax-core-js code. it should/can be phased out
 				  seed: ret.sec_seed_string,
 				  mnemonicString: ret.mnemonic_string,
 				  keys: {

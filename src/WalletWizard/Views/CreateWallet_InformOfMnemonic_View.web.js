@@ -4,7 +4,7 @@ const commonComponents_forms = require('../../MMAppUICommonComponents/forms.web'
 const commonComponents_navigationBarButtons = require('../../MMAppUICommonComponents/navigationBarButtons.web')
 const commonComponents_walletMnemonicBox = require('../../MMAppUICommonComponents/walletMnemonicBox.web')
 //
-const mnemonic_languages = require('@mymonero/mymonero-locales')
+const mnemonic_languages = require('@mylozzax/mylozzax-locales')
 //
 const BaseView_AWalletWizardScreen = require('./BaseView_AWalletWizardScreen.web')
 //

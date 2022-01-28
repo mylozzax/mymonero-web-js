@@ -1,6 +1,6 @@
 'use strict'
 
-const monero_config = require('@mymonero/mymonero-monero-config')
+const monero_config = require('@mylozzax/mylozzax-monero-config')
 // ^-- TODO: remove this
 //
 const openalias_utils = require('./openalias_utils')

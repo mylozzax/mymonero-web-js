@@ -1,6 +1,6 @@
 'use strict'
 
-const mnemonic_languages = require('@mymonero/mymonero-locales')
+const mnemonic_languages = require('@mylozzax/mylozzax-locales')
 const WizardTask_Modes =
 {
   FirstTime_CreateWallet: 'FirstTime_CreateWallet',

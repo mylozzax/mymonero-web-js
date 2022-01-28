@@ -4,7 +4,7 @@ import './assets/css/styles.css'
 import './assets/css/clear.browser.css'
 
 window.BootApp = async function () { // encased in a function to prevent scope being lost/freed on mobile
-  const coreBridgeInstance = await require('@mymonero/mymonero-app-bridge')({})
+  const coreBridgeInstance = await require('@mylozzax/mylozzax-app-bridge')({})
   console.log(process.env.NETTYPE)
   const isMobile = ('ontouchstart' in document.documentElement) // an approximation for 'mobile'
   const config = {
@@ -15,8 +15,8 @@ window.BootApp = async function () { // encased in a function to prevent scope b
     isDebug: false,
     isMobile: isMobile,
     TabBarView_thickness: isMobile ? 48 : 79,
-    appDownloadLink_domainAndPath: 'https://mymonero.com',
-    appRepoLink: 'https://www.github.com/mymonero/mymonero-app-js/releases/latest',
+    appDownloadLink_domainAndPath: 'https://lozzax.xyz',
+    appRepoLink: 'https://www.github.com/mylozzax/mylozzax-app-js/releases/latest',
     HostedMoneroAPIClient_DEBUGONLY_mockSendTransactionSuccess: false,
     monero_utils: coreBridgeInstance
   }
